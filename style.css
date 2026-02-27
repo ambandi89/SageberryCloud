@@ -332,7 +332,7 @@ a:focus {
   min-height: 35rem;
   display: flex;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 #SageberryBackground {
@@ -466,4 +466,13 @@ p {
     margin-bottom: 32px;
     transition: transform 8s;
     height: auto;
+}
+.contact-container {
+    background-color: var(--olive);
+    text-align: left;
+    padding: 2rem;
+}
+.contact-container h1 {
+    color: var(--white);
+    padding: 2rem;
 }
