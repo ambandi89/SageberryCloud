@@ -88,6 +88,7 @@ background: var(--maroon);
   transition:
     transform 0.4s ease,
     opacity 0.3s ease;
+  z-index: 1;
 }
 
 .off-screen-menu.active {
@@ -285,6 +286,8 @@ nav {
 header {
     position: relative;
     height: 5rem;
+    
+    background: transparent;
 }
 header img {
     width: auto;
@@ -329,7 +332,7 @@ a:focus {
   min-height: 35rem;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 #SageberryBackground {
