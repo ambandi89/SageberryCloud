@@ -17,6 +17,7 @@ html {
   --olive: #8b884e;
   /* --white: #fdfcfa; */
   --white: #FFF5EE;
+  --black: #292420;
 }
 
 @font-face {
@@ -84,7 +85,7 @@ background: var(--maroon);
   background: var(--light-pink);
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transform: translateX(100%);
   pointer-events: none;
   transition:
@@ -187,7 +188,7 @@ background: var(--maroon);
   }
 
   .off-screen-menu a {
-    color: var(--light-pink);
+    color: var(--white);
     padding: 10px;
     display: block;
   }
@@ -463,6 +464,7 @@ p {
     font-size: 1rem;
     line-height: 1.85;
     margin: 1rem;
+    color: var(--black);
 }
 .work-container {
     background-color: var(--dark-blue);
