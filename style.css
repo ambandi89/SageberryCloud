@@ -15,7 +15,8 @@ html {
   --light-pink: #bfa9ab;
   --dark-blue: #052939;
   --olive: #8b884e;
-  --white: #fdfcfa;
+  /* --white: #fdfcfa; */
+  --white: #FFF5EE;
 }
 
 @font-face {
@@ -301,7 +302,7 @@ header img {
 header a {
     display: flex;
     text-decoration: none;
-    color: var(--light-pink);
+    color: var(--white);
     font-weight: 600;
 }
 ul {
@@ -362,7 +363,7 @@ a:focus {
 }
 
 .hero-sub-container-text h1 {
-  color: var(--light-pink);
+  color: var(--white);
   max-width: 100%;
   width: 100%;
   margin: 0.5rem 0;
@@ -371,7 +372,7 @@ a:focus {
 }
 
 .hero-sub-container-text h2 {
-  color: var(--light-pink);
+  color: var(--white);
   max-width: 100%;
   width: 100%;
   margin: 0.5rem 0;
@@ -384,12 +385,13 @@ button {
   margin: 0.75rem auto;
 }
 .custom-btn {
-  width: 130px;
-  height: 40px;
-  color: var(--light-pink);
+  width: 9rem;
+  height: 3rem;
+  color: var(--white);
   border-radius: 5px;
   padding: 10px 25px;
   font-family: 'Abril Fatface', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
   background: transparent;
   cursor: pointer;
@@ -464,11 +466,11 @@ p {
 }
 .work-container {
     background-color: var(--dark-blue);
-    text-align: center;
+    text-align: left;
     padding: 2rem;
 }
 .work-container h1 {
-    color: var(--light-pink);
+    color: var(--white);
     padding: 2rem;
 }
 .scroll-image {
@@ -515,6 +517,6 @@ p {
     padding: 2rem;
 }
 .contact-container h1 {
-    color: var(--light-pink);
+    color: var(--white);
     padding: 2rem;
 }
