@@ -428,6 +428,11 @@ button {
   .hero-sub-container-text h2 {
     max-width: 55%;
   }
+  #SageberryBackground {
+    height: 55rem;
+    top: -110px;
+    left: -5px;
+  }
 }
 
 .intro-container {
