@@ -386,7 +386,7 @@ button {
 .custom-btn {
   width: 130px;
   height: 40px;
-  color: var(--white);
+  color: var(--light-pink);
   border-radius: 5px;
   padding: 10px 25px;
   font-family: 'Abril Fatface', sans-serif;
@@ -468,7 +468,7 @@ p {
     padding: 2rem;
 }
 .work-container h1 {
-    color: var(--white);
+    color: var(--light-pink);
     padding: 2rem;
 }
 .scroll-image {
@@ -515,6 +515,6 @@ p {
     padding: 2rem;
 }
 .contact-container h1 {
-    color: var(--white);
+    color: var(--light-pink);
     padding: 2rem;
 }
