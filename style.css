@@ -460,7 +460,6 @@ button {
     cursor: pointer;
 }
 
-.nerdy-tooltip-wrapper:hover .nerdy-tooltip,
 .nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
 .nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
     opacity: 1;
@@ -507,16 +506,6 @@ button {
     line-height: 1.6;
     color: var(--white);
     margin: 0;
-}
-
-/* Desktop: hover only on devices that support it */
-@media (hover: hover) {
-    .nerdy-tooltip-wrapper:hover .nerdy-tooltip {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: all;
-        max-height: 200px;
-    }
 }
 
 /* Both mobile (tap) and desktop (click toggle) */
@@ -590,8 +579,44 @@ p.p-visible {
     left: auto;
     right: 18px;
 }
+.nerdybits3 {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+.nerdybits3 .nerdy-tooltip {
+    left: 0;
+    right: auto;
+}
+
+.nerdybits3 .nerdy-tooltip::before {
+    left: 18px;
+    right: auto;
+}
+.nerdybits4 {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+.nerdybits4 .nerdy-tooltip {
+    left: auto;
+    right: 0;
+}
+
+.nerdybits4 .nerdy-tooltip::before {
+    left: auto;
+    right: 18px;
+}
 .nerdybits1,
-.nerdybits2 {
+.nerdybits2,
+.nerdybits3,
+.nerdybits4 {
     opacity: 0;
     transform: scale(0.85);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -599,16 +624,36 @@ p.p-visible {
 }
 
 .nerdybits1.nerdy-visible,
-.nerdybits2.nerdy-visible {
+.nerdybits2.nerdy-visible, 
+.nerdybits3.nerdy-visible,
+.nerdybits4.nerdy-visible  {
     opacity: 1;
     transform: scale(1);
     pointer-events: all;
+}
+
+@keyframes nerdy-wiggle {
+    0%   { transform: scale(1) rotate(0deg); }
+    20%  { transform: scale(1.05) rotate(-4deg); }
+    40%  { transform: scale(1.05) rotate(4deg); }
+    60%  { transform: scale(1.05) rotate(-2deg); }
+    80%  { transform: scale(1.05) rotate(2deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.nerdybits1.nerdy-visible #NerdyBits1,
+.nerdybits2.nerdy-visible #NerdyBits1,
+.nerdybits3.nerdy-visible #NerdyBits1,
+.nerdybits4.nerdy-visible #NerdyBits1 {
+    animation: nerdy-wiggle 0.6s ease 0.3s 1 forwards;
 }
 
 .work-container {
     background-color: var(--dark-blue);
     text-align: left;
     padding: 2rem;
+    position: relative;
+    padding-bottom: 7rem;
 }
 .work-container h1 {
     color: var(--white);
@@ -660,6 +705,8 @@ p.p-visible {
     background-color: var(--olive);
     text-align: left;
     padding: 2rem;
+    padding-bottom: 7rem;
+    position: relative;
 }
 .contact-container h1 {
     color: var(--white);
