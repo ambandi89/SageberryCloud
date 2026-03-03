@@ -600,7 +600,7 @@ p {
     outline: 2px solid var(--light-pink);
     outline-offset: 0.5rem;
     width: auto;
-    margin: 4rem auto; 
+    margin: 2rem auto; 
 }
 .scroll-image:hover #WWRscreencapture {
     filter: none;
@@ -612,6 +612,10 @@ p {
     filter: none;
     transform: translateY(-65%);
     opacity: 1;
+}
+.portfolio-section p {
+    color: var(--white);
+    padding-bottom: 2rem;
 }
 #WWRscreencapture {
     display: block;
