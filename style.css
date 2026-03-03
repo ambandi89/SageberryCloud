@@ -440,13 +440,17 @@ button {
     width: auto;
     background-color: var(--light-pink);
     padding: 2rem;
+    padding-bottom: 7rem;
+    padding-top: 5rem;
+    position: relative;
 }
 .nerdybits1 {
-    width: 23%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
     height: auto;
-    position: relative;
-    top: 0px;
-    left: 0px;
+    z-index: 1;
 }
 
 /* ===  Nerdy Bits Tooltip === */
@@ -561,11 +565,21 @@ p {
     color: var(--black);
 }
 .nerdybits2 {
-    width: 23%;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    width: auto;
     height: auto;
-    position: relative;
-    top: 0px;
-    right: 0px;
+    z-index: 1;
+}
+.nerdybits2 .nerdy-tooltip {
+    left: auto;
+    right: 0;
+}
+
+.nerdybits2 .nerdy-tooltip::before {
+    left: auto;
+    right: 18px;
 }
 
 .work-container {
