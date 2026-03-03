@@ -454,7 +454,8 @@ button {
 }
 
 .nerdy-tooltip-wrapper:hover .nerdy-tooltip,
-.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip {
+.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
+.nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
@@ -500,6 +501,26 @@ button {
     color: var(--white);
     margin: 0;
 }
+
+/* Desktop: hover only on devices that support it */
+@media (hover: hover) {
+    .nerdy-tooltip-wrapper:hover .nerdy-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        max-height: 200px;
+    }
+}
+
+/* Both mobile (tap) and desktop (click toggle) */
+.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
+.nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    max-height: 200px;
+}
+
 
 /* ======================== */
 #NerdyBits1 {
