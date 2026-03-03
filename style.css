@@ -441,6 +441,74 @@ button {
     background-color: var(--light-pink);
     padding: 2rem;
 }
+.nerdybits1 {
+    width: 23%;
+    height: auto;
+}
+
+/* ===  Nerdy Bits Tooltip === */
+.nerdy-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nerdy-tooltip-wrapper:hover .nerdy-tooltip,
+.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    max-height: 200px;
+}
+
+.nerdy-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 280px;
+    background-color: var(--dark-blue);
+    border-left: 3px solid var(--olive);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        max-height 0.4s ease;
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nerdy-tooltip::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 18px;
+    border-width: 0 7px 7px 7px;
+    border-style: solid;
+    border-color: transparent transparent var(--dark-blue) transparent;
+}
+
+.nerdy-tooltip p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--white);
+    margin: 0;
+}
+
+/* ======================== */
+#NerdyBits1 {
+    height: 5rem;
+    width: auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
 #IntroImg {
     height: 18rem;
     width: auto;
