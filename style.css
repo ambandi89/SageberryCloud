@@ -444,6 +444,9 @@ button {
 .nerdybits1 {
     width: 23%;
     height: auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
 
 /* ===  Nerdy Bits Tooltip === */
@@ -526,9 +529,6 @@ button {
 #NerdyBits1 {
     height: 5rem;
     width: auto;
-    position: relative;
-    top: 0px;
-    left: 0px;
 }
 #IntroImg {
     height: 18rem;
@@ -560,6 +560,14 @@ p {
     margin: 1rem;
     color: var(--black);
 }
+.nerdybits2 {
+    width: 23%;
+    height: auto;
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
 .work-container {
     background-color: var(--dark-blue);
     text-align: left;
