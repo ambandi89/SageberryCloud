@@ -29,3 +29,19 @@ function checkNerdyBitsVisibility() {
 
 window.addEventListener('scroll', checkNerdyBitsVisibility);
 checkNerdyBitsVisibility();
+
+// scrolling for p
+
+function checkParagraphVisibility() {
+    const paragraphs = document.querySelectorAll('p');
+    
+    paragraphs.forEach(p => {
+        const rect = p.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+            p.classList.add('p-visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkParagraphVisibility);
+checkParagraphVisibility();
