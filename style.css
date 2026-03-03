@@ -460,13 +460,13 @@ button {
     cursor: pointer;
 }
 
-.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
+/* .nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
 .nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
     max-height: 200px;
-}
+} */
 
 .nerdy-tooltip {
     position: absolute;
@@ -509,14 +509,40 @@ button {
 }
 
 /* Both mobile (tap) and desktop (click toggle) */
-.nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
+/* .nerdy-tooltip-wrapper:focus-within .nerdy-tooltip,
 .nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
     max-height: 200px;
+} */
+
+/* Touch devices: class-only, no hover */
+@media (hover: none) {
+    .nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        max-height: 200px;
+    }
 }
 
+/* Desktop: hover works + click toggle */
+@media (hover: hover) {
+    .nerdy-tooltip-wrapper:not(.tooltip-active):hover .nerdy-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        max-height: 200px;
+    }
+
+    .nerdy-tooltip-wrapper.tooltip-active .nerdy-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        max-height: 200px;
+    }
+}
 
 /* ======================== */
 #NerdyBits1 {

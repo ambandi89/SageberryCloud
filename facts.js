@@ -1,41 +1,28 @@
 document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('mousedown', function(e) {
+    wrapper.addEventListener('click', function(e) {
         e.stopPropagation();
         const isOpen = this.classList.contains('tooltip-active');
 
-        // Close all first
         document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
             w.classList.remove('tooltip-active');
         });
 
-        // Toggle: if it was closed, open it
         if (!isOpen) {
             this.classList.add('tooltip-active');
         }
 
-        // Stop pulse animation
         this.querySelectorAll('img').forEach(img => {
             img.style.animation = 'none';
         });
     });
+});
 
-    // Also handle touch for mobile
-    wrapper.addEventListener('touchstart', function(e) {
-        e.stopPropagation();
-        const isOpen = this.classList.contains('tooltip-active');
-
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nerdy-tooltip-wrapper')) {
         document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
             w.classList.remove('tooltip-active');
         });
-
-        if (!isOpen) {
-            this.classList.add('tooltip-active');
-        }
-
-        this.querySelectorAll('img').forEach(img => {
-            img.style.animation = 'none';
-        });
-    }, { passive: true });
+    }
 });
 
 // Close when clicking outside
