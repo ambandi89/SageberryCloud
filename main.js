@@ -76,3 +76,16 @@ window.addEventListener('scroll', function() {
         heroImg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
     }
 });
+
+// Parallax for footer background
+window.addEventListener('scroll', function() {
+    const footer = document.querySelector('.site-footer');
+    if (footer) {
+        const rect = footer.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (visible) {
+            const offset = (window.scrollY - (footer.offsetTop - window.innerHeight)) * 0.2;
+            footer.style.backgroundPositionY = offset + 'px';
+        }
+    }
+});
