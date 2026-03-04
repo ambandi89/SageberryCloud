@@ -67,3 +67,12 @@ overlay.addEventListener("click", () => {
     submenu.classList.remove("open");
   });
 });
+
+
+// Parallax for hero background image
+window.addEventListener('scroll', function() {
+    const heroImg = document.getElementById('SageberryBackground');
+    if (heroImg) {
+        heroImg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+    }
+});
