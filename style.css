@@ -746,3 +746,136 @@ p.p-visible {
     color: var(--white);
     padding: 2rem;
 }
+
+/* Claude edits */
+.contact-intro {
+    color: var(--white) !important;
+    max-width: 60%;
+    margin: 0 auto 2rem auto;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.contact-form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    color: var(--black);
+    background-color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 0 3px rgba(5, 41, 57, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    height: 3.25rem;
+    font-size: 1rem;
+    margin: 0.5rem 0 0 0;
+    background-color: var(--dark-blue) !important;
+    border: 2px solid var(--white);
+    letter-spacing: 0.05em;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--maroon) !important;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-success,
+.form-error {
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    text-align: center;
+}
+
+.form-success {
+    background-color: rgba(5, 41, 57, 0.4);
+    border: 1px solid var(--dark-blue);
+}
+
+.form-success p {
+    color: var(--white) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    max-width: 100%;
+}
+
+.form-error {
+    background-color: rgba(99, 34, 50, 0.4);
+    border: 1px solid var(--maroon);
+}
+
+.form-error p {
+    color: var(--white) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0;
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .contact-intro {
+        max-width: 90%;
+    }
+    .contact-form-wrapper {
+        padding: 0 0.5rem 2rem 0.5rem;
+    }
+}
