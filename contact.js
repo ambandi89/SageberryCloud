@@ -46,12 +46,12 @@ document.getElementById('contactSubmitBtn').addEventListener('click', async func
             body: formData
         });
 
-        if (response.ok) {
-            // Clear form
-            document.getElementById('fullName').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-            successMsg.style.display = 'block';
+      if (response.ok) {
+    document.getElementById('fullName').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+    successMsg.style.display = 'block';
+    setTimeout(() => { successMsg.style.display = 'none'; }, 4000);
         } else {
             errorMsg.style.display = 'block';
         }

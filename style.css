@@ -879,3 +879,103 @@ p.p-visible {
         padding: 0 0.5rem 2rem 0.5rem;
     }
 }
+
+/* ===========================
+   FOOTER — paste into bottom of style.css
+   =========================== */
+
+.site-footer {
+    background-color: var(--dark-blue);
+    background-image: url('img/blueberriespattern.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(5, 41, 57, 0.82);
+    pointer-events: none;
+}
+
+.footer-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    height: 3rem;
+    width: auto;
+    opacity: 0.9;
+}
+
+.footer-tagline {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    color: var(--light-pink);
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0;
+    max-width: 100%;
+    letter-spacing: 0.02em;
+}
+
+.footer-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    background-color: rgba(255, 245, 238, 0.08);
+    border: 1px solid rgba(255, 245, 238, 0.2);
+    padding: 0.55rem 1.25rem;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    margin-top: 0.25rem;
+}
+
+.footer-linkedin:hover,
+.footer-linkedin:focus {
+    background-color: var(--maroon);
+    border-color: var(--maroon);
+    color: var(--white);
+}
+
+.footer-linkedin svg {
+    flex-shrink: 0;
+}
+
+.footer-divider {
+    width: 3rem;
+    height: 1px;
+    background-color: rgba(191, 169, 171, 0.3);
+    margin: 0.5rem 0;
+}
+
+.footer-credit {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    color: rgba(191, 169, 171, 0.6);
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0;
+    max-width: 100%;
+}
