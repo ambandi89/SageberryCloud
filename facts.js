@@ -1,10 +1,18 @@
+let tooltipJustToggled = false;
+
 document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(wrapper => {
-    wrapper.addEventListener('click', function(e) {
+
+    // Handle touch (Android + iOS)
+    wrapper.addEventListener('touchend', function(e) {
+        e.preventDefault();
         e.stopPropagation();
+        tooltipJustToggled = true;
+
         const isOpen = this.classList.contains('tooltip-active');
 
         document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
             w.classList.remove('tooltip-active');
+            w.classList.remove('force-closed');
         });
 
         if (!isOpen) {
@@ -14,35 +22,55 @@ document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(wrapper => {
         this.querySelectorAll('img').forEach(img => {
             img.style.animation = 'none';
         });
+
+        setTimeout(() => { tooltipJustToggled = false; }, 300);
+    });
+
+    // Handle click (desktop)
+    wrapper.addEventListener('click', function(e) {
+        if (tooltipJustToggled) return;
+        e.stopPropagation();
+        const isOpen = this.classList.contains('tooltip-active');
+
+        document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
+            w.classList.remove('tooltip-active');
+            w.classList.remove('force-closed');
+        });
+
+        if (!isOpen) {
+            this.classList.add('tooltip-active');
+        } else {
+            this.classList.add('force-closed');
+        }
+
+        this.querySelectorAll('img').forEach(img => {
+            img.style.animation = 'none';
+        });
     });
 });
 
+// Close when touching outside (mobile)
+document.addEventListener('touchend', function(e) {
+    if (tooltipJustToggled) return;
+    if (!e.target.closest('.nerdy-tooltip-wrapper')) {
+        document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
+            w.classList.remove('tooltip-active');
+            w.classList.remove('force-closed');
+        });
+    }
+});
+
+// Close when clicking outside (desktop)
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.nerdy-tooltip-wrapper')) {
         document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
             w.classList.remove('tooltip-active');
+            w.classList.remove('force-closed');
         });
     }
 });
 
-// Close when clicking outside
-document.addEventListener('mousedown', function(e) {
-    if (!e.target.closest('.nerdy-tooltip-wrapper')) {
-        document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
-            w.classList.remove('tooltip-active');
-        });
-    }
-});
-
-document.addEventListener('touchstart', function(e) {
-    if (!e.target.closest('.nerdy-tooltip-wrapper')) {
-        document.querySelectorAll('.nerdy-tooltip-wrapper').forEach(w => {
-            w.classList.remove('tooltip-active');
-        });
-    }
-}, { passive: true });
-
-    // scrolling
+// scrolling
 
 function checkNerdyBitsVisibility() {
     const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
