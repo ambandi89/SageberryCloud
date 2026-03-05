@@ -405,6 +405,9 @@ button {
    4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
 }
+a {
+  text-decoration: none;
+}
 .btn-1 {
   background: var(--maroon);
   /* background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%); */
@@ -884,7 +887,7 @@ p.p-visible {
 .site-footer {
     background-color: var(--dark-blue);
     background-image: url('img/blueberriespattern.png');
-    background-size: cover;
+    background-size: 150%;
     background-position: center;
     background-attachment: scroll;
     padding: 3rem 2rem 2rem;
@@ -969,6 +972,16 @@ p.p-visible {
 
 .footer-credit {
     font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    color: rgba(191, 169, 171, 0.6);
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0;
+    max-width: 100%;
+}
+
+#footerYear {
+     font-family: "Poppins", sans-serif;
     font-size: 0.75rem;
     color: rgba(191, 169, 171, 0.6);
     opacity: 1 !important;
