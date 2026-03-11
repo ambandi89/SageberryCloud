@@ -332,7 +332,7 @@ a:focus {
 .hero-container {
   position: relative;
   width: 100%;
-  min-height: 35rem;
+  min-height: 45rem;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -438,6 +438,11 @@ a {
   }
 }
 
+@keyframes berry-drift {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .intro-container {
     min-height: 40rem;
     width: auto;
@@ -446,7 +451,44 @@ a {
     padding-bottom: 7rem;
     padding-top: 5rem;
     position: relative;
+    overflow: hidden;
 }
+
+.intro-container::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60%;
+    padding-bottom: 75%;
+    background-image: url('img/strawberryCircle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.15;
+    animation: berry-drift 150s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.intro-container::after {
+    content: "";
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 50%;
+    padding-bottom: 65%;
+    background-image: url('img/blueberriesCircle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.25;
+    animation: berry-drift 140s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
 .nerdybits1 {
     position: absolute;
     top: 1rem;
@@ -566,6 +608,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; 
+    z-index: 1;
 }
 .span-container {
     background-color: var(--olive);
@@ -575,6 +619,8 @@ a {
     margin: 1rem auto;
     padding: 1rem;
     text-align: center;
+    position: relative; 
+    z-index: 1;
 }
 span {
     color: var(--white);
@@ -592,6 +638,11 @@ p {
     opacity: 0;
     transform: translateY(15px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.intro-p-container {
+    background-color: var(--white);
+    padding: 1rem;
+    margin-top: 3rem;
 }
 
 p.p-visible {
@@ -689,6 +740,29 @@ p.p-visible {
     position: relative;
     padding-bottom: 7rem;
 }
+@media (min-width: 600px) {
+    .portfolio-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+        padding: 1rem 0;
+    }
+
+    .portfolio-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 22rem;
+    }
+
+    .scroll-image {
+        margin: 0;
+        width: 100%;
+        max-width: 22rem;
+    }
+}
 .work-container h1 {
     color: var(--white);
     padding: 2rem;
@@ -703,6 +777,7 @@ p.p-visible {
     outline-offset: 0.5rem;
     width: auto;
     margin: 2rem auto; 
+    max-width: 25rem;
 }
 .scroll-image:hover #WWRscreencapture {
     filter: none;
